@@ -1,0 +1,21 @@
+# fly.toml app configuration file generated for kafka-zk on 2025-04-16
+
+app = "kafka-zk-fly"
+primary_region = "gru"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[[services]]
+  internal_port = 9092
+  protocol = "tcp"
+  auto_stop_machines = false
+  auto_start_machines = true
+  ports = [
+    { port = 9092 }
+  ]
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1
